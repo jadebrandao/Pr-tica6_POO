@@ -1,28 +1,63 @@
+
 import java.util.ArrayList;
+
 public class RedeSocial {
-    ArrayList<Publicacao> publicacoes = new ArrayList<> ();
-
-
+    private String dataCriacao;
     private String nomeUsuario;
-    private String DataCriacao;
+    private String dataNascimento;
     private String senha;
+    ArrayList<Publicacao> publicacoes = new ArrayList<>();
 
-    public RedeSocial(ArrayList<Publicacao> publicacoes, String dataCriacao, String nomeUsuario, String dataCriacao1, String senha) {
-        this.publicacoes = publicacoes;
+    void inserePublicacao(Publicacao publi) {
+        publicacoes.add(publi);
+    }
+
+    void imprimirPublicacoes() {
+        System.out.println("Total de publicacoes:" + Publicacao.getContadorPublicacao());
+        for (int i = 0; i < publicacoes.size(); i++) {
+            System.out.println("Data da Publicacao:" + publicacoes.get(i).getDataPublicacao());
+            System.out.println("Texto da Publicacao:" + publicacoes.get(i).getTextoPublicacao());
+        }
+    }
+
+
+
+    public RedeSocial(String dataCriacao, String nomeUsuario, String dataNascimento, String senha) {
+        this.dataCriacao = dataCriacao;
         this.nomeUsuario = nomeUsuario;
-        DataCriacao = dataCriacao1;
+        this.dataNascimento = dataNascimento;
         this.senha = senha;
     }
 
-    void inserePublicacao(Publicacao publi) {
-
-    }
-    void imprimePublicacoes(){
-
+    public String getDataCriacao() {
+        return dataCriacao;
     }
 
-    void getContadorPublicacao() {
+    public void setDataCriacao(String dataCriacao) {
+        this.dataCriacao = dataCriacao;
+    }
 
+    public String getNomeUsuario() {
+        return nomeUsuario;
+    }
+
+    public void setNomeUsuario(String nomeUsuario) {
+        this.nomeUsuario = nomeUsuario;
+    }
+
+    public String getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }
-
