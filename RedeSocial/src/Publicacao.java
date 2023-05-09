@@ -1,38 +1,42 @@
+
 public class Publicacao {
-
     private String dataPublicacao;
-    private String textoPublicado;
+    private String textoPublicacao;
     private String linkMidia;
+    public static double contadorPublicacao=0;
 
-    public Publicacao(String dataPublicacao, String textoPublicado, String linkMidia) {
+    public Publicacao(String dataPublicacao, String textoPublicacao, String linkMidia) {
         this.dataPublicacao = dataPublicacao;
-        this.textoPublicado = textoPublicado;
+        this.textoPublicacao = textoPublicacao;
         this.linkMidia = linkMidia;
+        contadorPublicacao++;
     }
 
     public String getDataPublicacao() {
         return dataPublicacao;
     }
 
-    public String getTextoPublicado() {
-        return textoPublicado;
+    public void setDataPublicacao(String dataPublicacao) {
+        this.dataPublicacao = dataPublicacao;
+    }
+
+    public String getTextoPublicacao() {
+        return textoPublicacao;
+    }
+
+    public void setTextoPublicacao(String textoPublicacao) {
+        this.textoPublicacao = textoPublicacao;
     }
 
     public String getLinkMidia() {
         return linkMidia;
     }
 
-    public static double getContadorPublicacao() {
-        return contadorPublicacao;
-    }
-
-    public void setTextoPublicado(String textoPublicado) {
-        this.textoPublicado = textoPublicado;
-    }
-
     public void setLinkMidia(String linkMidia) {
         this.linkMidia = linkMidia;
     }
 
-    public static  double  contadorPublicacao;
+    public static double getContadorPublicacao() {
+        return contadorPublicacao;
+    }
 }
